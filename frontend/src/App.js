@@ -3,10 +3,14 @@ import React, { Component } from "react";
 import axios from 'axios';
 
 // import { render } from "react-dom";
-import Post from './Components/Post'
-import PostForm from './Components/PostForm'
+import Post from './Components/Post';
+import PostForm from './Components/PostForm';
 
-import './static/mainnew.css'
+import './static/mainnew.css';
+
+
+import 'bulma/css/bulma.css'
+import APIDetails from "./Components/APIDetails";
 
 
 
@@ -63,30 +67,32 @@ class App extends Component {
   }
 
   componentDidMount() {
-     axios.get(`http://localhost:8000/api/post`)
+    axios.get(`http://localhost:8000/api/post`)
       .then(res => {
         const posts = res.data;
         this.setState({ posts });
       })
       .catch(error => {
         console.log(error)
-    })
+      })
   }
-  
+
 
   render() {
     return (
       <ul>
 
         <div>
-          <div className="ui stackable grid" bis_skin_checked="1">
 
-            <div className="eight wide column" bis_skin_checked="1">
-              <p style={{ fontSize: '30px' }}>Add Details:</p>
+          <div className="columns">
+
+            <div className="column is-half">
               <PostForm />
+              <APIDetails />
             </div>
 
-            <div className="eight wide column" bis_skin_checked="1">
+            <div className="column" >
+            <p className="paddingt-20 paddingl-20 paddingr-20" style={{ fontSize: '30px', color: 'blue' }}>User details:</p>
               {this.state.posts.map(post => {
                 return (
                   <Post key={post.id} post={post} />
@@ -95,6 +101,8 @@ class App extends Component {
             </div>
 
           </div>
+
+
         </div>
       </ul>
     );

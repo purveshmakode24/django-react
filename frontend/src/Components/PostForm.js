@@ -42,10 +42,11 @@ export default class PostForm extends Component {
         console.log(this.state.imessage);
         console.log(post);
 
-        axios.post(`http://localhost:8000/api/post/create/`,  post  )
+        axios.post(`http://localhost:8000/api/post/create/`, post)
             .then(res => {
                 console.log(res);
                 console.log(res.data);
+                alert("Info Successfully added!")
             })
             .catch(error => {
                 console.log(error)
@@ -57,22 +58,46 @@ export default class PostForm extends Component {
     render() {
         return (
 
-            <div>
-                <form className="ui form" onSubmit={this.handleSubmit}>
-                    <div className="field" bis_skin_checked="1">
-                        <label>First Name</label>
-                        <input type="text" name="iname" placeholder="First Name" onChange={this.handleChange} />
+            <div className="post">
+
+                <p style={{ fontSize: '30px', color: 'blue' }}>Add details:</p>
+                <form onSubmit={this.handleSubmit}>
+
+
+                    <div className="field">
+                        <label className="label paddingt-20">Name:</label>
+                        <div className="control has-icons-left has-icons-right">
+                            <input className="input" name="iname" type="text" placeholder="name"  onChange={this.handleChange} />
+                            <span className="icon is-left">
+                                <i className="fas fa-user"></i>
+                            </span>
+                            <span className="icon is-right">
+                                <i className="fas fa-check"></i>
+                            </span>
+                        </div>
+
+                        <label className="label paddingt-20">Email:</label>
+                        <div className="control has-icons-left has-icons-right">
+                            <input className="input" name="iemail" type="email" placeholder="makodepurvesh@gmail.com"  onChange={this.handleChange} />
+                            <span className="icon is-left">
+                                <i className="fas fa-at"></i>
+                            </span>
+                            <span className="icon is-right">
+                                <i className="fas fa-check"></i>
+                            </span>
+                        </div>
+
+                        <label className="label paddingt-20">Message:</label>
+                        <textarea className="textarea" name="imessage" placeholder="e.g. Hello world"  onChange={this.handleChange}></textarea>
+
+                        <div className="control paddingt-20">
+                            <button className="button is-primary" type="submit">Submit</button>
+                        </div>
                     </div>
-                    <div className="field" bis_skin_checked="1">
-                        <label>E-mail</label>
-                        <input type="email" name="iemail" placeholder="joe@schmoe.com" onChange={this.handleChange} />
-                    </div>
-                    <div className="field" bis_skin_checked="1">
-                        <label>Text</label>
-                        <textarea name="imessage" onChange={this.handleChange} ></textarea>
-                    </div>
-                    <button className="ui button" type="submit">Submit</button>
+
+
                 </form>
+
             </div>
         )
 

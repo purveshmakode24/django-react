@@ -7,6 +7,7 @@ import axios from 'axios';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 export default class UpdateForm extends Component {
 
     constructor(props) {
@@ -63,37 +64,78 @@ export default class UpdateForm extends Component {
 
     render() {
 
+        function openModal(id) {
+            var x = document.getElementById(`${id}`);
+            x.classList.add("is-active");
+            document.getElementById(`${id}`).style.display = "";
 
-     
+        }
+
+
+        function closeModal(id) {
+            document.getElementById(`${id}`).style.display = 'none';
+            document.getElementById(`${id}`).classList.remove("is-active");
+        }
+
+
 
         return (
+
+
             <div>
-                {/* <Modal trigger={<Button>Update</Button>}>
+                <div className="edit-button">
+                    <button className="button is-info is-light" onClick={() => openModal(this.props.post.id)} style={{ float: "right",  }}>Edit</button>
+                </div>
 
-                    <Modal.Header>Update Details</Modal.Header>
-                    <Modal.Description>
-                        <Form id='updateform' onSubmit={this.handleSubmit}>
-                            <Form.Field >
-                                <label>Name</label>
-                                <input value={this.state.iname} name='iname' type='text' onChange={this.handleChange} />
-                            </Form.Field>
-                            <Form.Field>
-                                <label>Email:</label>
-                                <input value={this.state.iemail} name='iemail' type='email' onChange={this.handleChange} />
-                            </Form.Field>
-                            <Form.Field>
-                                <label>Message:</label>
-                                <TextArea value={this.state.imessage} name='imessage' onChange={this.handleChange}></TextArea>
-                            </Form.Field>
-
-                            <Button type='submit'>Update</Button>
-                        </Form>
-                    </Modal.Description>
-                </Modal> */}
+                <div id={this.props.post.id} className="modal">
+                    <div className="modal-background"></div>
+                    <div className="modal-card">
+                        <form onSubmit={this.handleSubmit}>
+                            <header className="modal-card-head">
+                                <p className="modal-card-title">Editing Details of User: {this.props.post.id} </p>
+                                <p className="delete" aria-label="close" onClick={() => closeModal(this.props.post.id)}></p>
+                            </header>
+                            <section className="modal-card-body">
 
 
 
 
+                                <div className="field">
+                                    <label className="label is-small paddingt-20">Name:</label>
+                                    <div className="control has-icons-left has-icons-right">
+                                        <input className="input is-small" value={this.state.iname} name="iname" type="text" placeholder="name" onChange={this.handleChange} />
+                                        <span className="icon is-small is-left">
+                                            <i className="fas fa-user"></i>
+                                        </span>
+                                        <span className="icon is-small is-right">
+                                            <i className="fas fa-check"></i>
+                                        </span>
+                                    </div>
+
+                                    <label className="label is-small paddingt-20">Email:</label>
+                                    <div className="control has-icons-left has-icons-right">
+                                        <input className="input is-small" value={this.state.iemail} name="iemail" type="email" placeholder="makodepurvesh@gmail.com" onChange={this.handleChange} />
+                                        <span className="icon is-small is-left">
+                                            <i className="fas fa-at"></i>
+                                        </span>
+                                        <span className="icon is-small is-right">
+                                            <i className="fas fa-check"></i>
+                                        </span>
+                                    </div>
+
+                                    <label className="label is-small paddingt-20">Message:</label>
+                                    <textarea className="textarea" value={this.state.imessage} name="imessage" placeholder="e.g. Hello world" onChange={this.handleChange}></textarea>
+
+                                </div>
+
+
+                            </section>
+                            <footer className="modal-card-foot">
+                                <button className="button is-success" type="submit" onClick={() => closeModal(this.props.post.id)}>Save changes</button>
+                            </footer>
+                        </form>
+                    </div>
+                </div>
 
 
             </div>

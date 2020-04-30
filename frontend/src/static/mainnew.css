@@ -1,7 +1,4 @@
-body {
-    color: blue;
 
-}
 
 .post {
     padding: 20px;
@@ -11,3 +8,33 @@ body {
 #updateform {
     padding: 30px;;
 }
+
+
+.paddingall-20 {
+    padding: 20px;
+}
+
+.paddingt-20 {
+    padding-top: 20px;
+}
+
+.paddingr-20 {
+    padding-right: 20px;
+}
+.paddingl-20 {
+    padding-left: 20px;
+}
+
+
+.paddingt-10 {
+    padding-top: 10px;
+}
+
+
+@media(max-width:769px){
+    .edit-button {
+        padding-bottom: 35px;
+        
+    }
+}
+
