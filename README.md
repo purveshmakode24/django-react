@@ -14,7 +14,7 @@
   - Django Rest Framework serves powerful web APIs
   - Data available at:
   ````
-  localhost:8000/api/posts
+  localhost:8000/api/post
   ````
 
 # Client
