@@ -21,8 +21,8 @@ export default class APIDetails extends Component {
                             <td>localhost:8000/api/post/</td>
                         </tr>
                         {/* <tr>
-                            <td>Data</td>
-                            <td>URL</td>
+                            <td>...</td>
+                            <td>...</td>
                         </tr> */}
                         </tbody>                    
                     </table>

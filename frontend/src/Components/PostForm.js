@@ -49,7 +49,8 @@ export default class PostForm extends Component {
                 alert("Info Successfully added!")
             })
             .catch(error => {
-                console.log(error)
+                console.log(error);
+                alert("Sorry we couldn't proceed your request at this time. please try again later");
             })
     }
 

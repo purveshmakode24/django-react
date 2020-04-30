@@ -63,7 +63,8 @@ class App extends Component {
   // USING AXIOS----------------------------------->
 
   state = {
-    posts: []
+    posts: [],
+    server_not_connected_msg: ''
   }
 
   componentDidMount() {
@@ -73,12 +74,29 @@ class App extends Component {
         this.setState({ posts });
       })
       .catch(error => {
-        console.log(error)
+        this.setState({ server_not_connected_msg: "Can't fetch data at this moment" });
+        console.log(error);
+        alert("We couldn't reach our servers. You may not be connected to internet. Please try again...");
       })
   }
 
-
   render() {
+
+    // error/connection validation
+
+    console.log(this.state.server_not_connected_msg);
+
+    // var renderTemp;
+    var error = this.state.server_not_connected_msg;
+    var errmsg = `<div style="color: red; font-size: 20px; padding:20px">${this.state.server_not_connected_msg}</div>`;
+    if (error) {
+      // renderTemp = this.state.server_not_connected_msg;
+      document.getElementById('connerr').innerHTML = errmsg;
+    }
+
+    
+
+
     return (
       <ul>
 
@@ -92,7 +110,10 @@ class App extends Component {
             </div>
 
             <div className="column" >
-            <p className="paddingt-20 paddingl-20 paddingr-20" style={{ fontSize: '30px', color: 'blue' }}>User details:</p>
+              <p className="paddingt-20 paddingl-20 paddingr-20" style={{ fontSize: '30px', color: 'blue' }}>User details:</p>
+              {/* if connection error */}
+              <div id="connerr"></div>
+              {/* else: */}
               {this.state.posts.map(post => {
                 return (
                   <Post key={post.id} post={post} />
@@ -108,5 +129,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
