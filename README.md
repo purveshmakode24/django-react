@@ -8,7 +8,14 @@
   ````
   localhost:8000
   ````
+  
+  API:
+  
   - Django Rest Framework serves powerful web APIs
+  - Data available at:
+  ````
+  localhost:8000/api/posts
+  ````
 
 # Client
 
