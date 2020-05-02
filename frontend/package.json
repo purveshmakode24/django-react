@@ -10,6 +10,7 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "bulma": "^0.8.2",
+    "django-react-csrftoken": "^1.0.4",
     "jquery": "^3.5.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",

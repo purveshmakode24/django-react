@@ -57,6 +57,7 @@ export default class UpdateForm extends Component {
             })
             .catch(error => {
                 console.log(error);
+                alert("Sorry we couldn't proceed your request at this time. Please try again later..");
             })
     }
 
