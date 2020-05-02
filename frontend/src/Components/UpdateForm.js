@@ -29,7 +29,6 @@ export default class UpdateForm extends Component {
 
         });
 
-
     }
 
 
@@ -82,10 +81,9 @@ export default class UpdateForm extends Component {
 
         return (
 
-
             <div>
                 <div className="edit-button">
-                    <button className="button is-info is-light" title="Edit details" onClick={() => openModal(this.props.post.id)} style={{ float: "right",  }}>Edit</button>
+                    <button className="button is-info is-light" title="Edit details" onClick={() => openModal(this.props.post.id)} style={{ float: "right", }}>Edit</button>
                 </div>
 
                 <div id={this.props.post.id} className="modal">
@@ -97,9 +95,6 @@ export default class UpdateForm extends Component {
                                 <p className="delete" aria-label="close" onClick={() => closeModal(this.props.post.id)}></p>
                             </header>
                             <section className="modal-card-body">
-
-
-
 
                                 <div className="field">
                                     <label className="label is-small paddingt-20">Name:</label>
@@ -126,9 +121,7 @@ export default class UpdateForm extends Component {
 
                                     <label className="label is-small paddingt-20">Message:</label>
                                     <textarea className="textarea" value={this.state.imessage} name="imessage" placeholder="e.g. Hello world" onChange={this.handleChange}></textarea>
-
                                 </div>
-
 
                             </section>
                             <footer className="modal-card-foot">
@@ -137,7 +130,6 @@ export default class UpdateForm extends Component {
                         </form>
                     </div>
                 </div>
-
 
             </div>
         )

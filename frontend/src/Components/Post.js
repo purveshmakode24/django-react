@@ -37,9 +37,7 @@ export default function Post(props) {
           <UpdateForm post={props.post} />
           <DeleteForm post={props.post} />
         </article>
-
       </div>
-
     </div>
   )
 }

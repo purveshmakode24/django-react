@@ -94,14 +94,13 @@ class App extends Component {
       document.getElementById('connerr').innerHTML = errmsg;
     }
 
-    
+
 
 
     return (
+
       <ul>
-
         <div>
-
           <div className="columns">
 
             <div className="column is-half">
@@ -122,8 +121,6 @@ class App extends Component {
             </div>
 
           </div>
-
-
         </div>
       </ul>
     );

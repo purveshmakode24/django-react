@@ -69,7 +69,7 @@ export default class PostForm extends Component {
                     <div className="field">
                         <label className="label paddingt-20">Name:</label>
                         <div className="control has-icons-left has-icons-right">
-                            <input className="input" name="iname" type="text" placeholder="name"  onChange={this.handleChange} />
+                            <input className="input" name="iname" type="text" placeholder="name" onChange={this.handleChange} />
                             <span className="icon is-left">
                                 <i className="fas fa-user"></i>
                             </span>
@@ -80,7 +80,7 @@ export default class PostForm extends Component {
 
                         <label className="label paddingt-20">Email:</label>
                         <div className="control has-icons-left has-icons-right">
-                            <input className="input" name="iemail" type="email" placeholder="makodepurvesh@gmail.com"  onChange={this.handleChange} />
+                            <input className="input" name="iemail" type="email" placeholder="makodepurvesh@gmail.com" onChange={this.handleChange} />
                             <span className="icon is-left">
                                 <i className="fas fa-at"></i>
                             </span>
@@ -90,7 +90,7 @@ export default class PostForm extends Component {
                         </div>
 
                         <label className="label paddingt-20">Message:</label>
-                        <textarea className="textarea" name="imessage" placeholder="e.g. Hello world"  onChange={this.handleChange}></textarea>
+                        <textarea className="textarea" name="imessage" placeholder="e.g. Hello world" onChange={this.handleChange}></textarea>
 
                         <div className="control paddingt-20">
                             <button className="button is-primary" type="submit">Submit</button>

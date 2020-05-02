@@ -36,8 +36,7 @@
 @media(max-width:769px){
     .edit-button {
         padding-bottom: 35px;
-        display: inline;
-        
+        display: inline;       
     }
 
     .delete-button {
