@@ -4,11 +4,9 @@
     padding: 20px;
 }
 
-
 #updateform {
     padding: 30px;;
 }
-
 
 .paddingall-20 {
     padding: 20px;
@@ -21,20 +19,29 @@
 .paddingr-20 {
     padding-right: 20px;
 }
+
 .paddingl-20 {
     padding-left: 20px;
 }
 
-
 .paddingt-10 {
     padding-top: 10px;
+}
+
+.marginr-5 {
+    margin-right: 5px;
 }
 
 
 @media(max-width:769px){
     .edit-button {
         padding-bottom: 35px;
+        display: inline;
         
+    }
+
+    .delete-button {
+        padding-bottom: 35px;
     }
 }
 

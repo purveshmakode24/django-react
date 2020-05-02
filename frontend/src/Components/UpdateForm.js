@@ -84,7 +84,7 @@ export default class UpdateForm extends Component {
 
             <div>
                 <div className="edit-button">
-                    <button className="button is-info is-light" onClick={() => openModal(this.props.post.id)} style={{ float: "right",  }}>Edit</button>
+                    <button className="button is-info is-light" title="Edit details" onClick={() => openModal(this.props.post.id)} style={{ float: "right",  }}>Edit</button>
                 </div>
 
                 <div id={this.props.post.id} className="modal">

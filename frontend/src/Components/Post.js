@@ -1,7 +1,8 @@
 // import React, { Component } from "react";
 import React from "react";
 
-import UpdateForm from "./UpdateForm"
+import UpdateForm from "./UpdateForm";
+import DeleteForm from "./DeleteForm";
 
 // export default class Post extends Component {
 
@@ -34,8 +35,9 @@ export default function Post(props) {
           <p className="subtitle">{props.post.email}</p>
           <h4>{props.post.message}</h4>
           <UpdateForm post={props.post} />
+          <DeleteForm post={props.post} />
         </article>
-        
+
       </div>
 
     </div>
