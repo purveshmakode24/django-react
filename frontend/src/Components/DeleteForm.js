@@ -49,6 +49,7 @@ export default class UpdateForm extends Component {
             .then(res => {
                 console.log(res);
                 console.log(res.data);
+                window.location.reload(false);
                 alert("Info. Successfully Deleted!");
             })
             .catch(error => {
