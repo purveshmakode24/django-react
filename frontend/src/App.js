@@ -113,7 +113,7 @@ class App extends Component {
               <p className="paddingt-20 paddingl-20 paddingr-20" style={{ fontSize: '30px', color: 'blue' }}>User details:</p>
               {/* if error while fetching */}
               <div id="connerr"></div>
-              {/* ---------- */}
+ 
 
               {/* Conditional rendering for fetching data */}
               {
@@ -127,8 +127,6 @@ class App extends Component {
                   })
 
               }
-
-              {/* ----------------- */}
 
             </div>
 
