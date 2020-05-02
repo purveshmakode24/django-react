@@ -64,17 +64,18 @@ class App extends Component {
 
   state = {
     posts: [],
-    server_not_connected_msg: ''
+    server_not_connected_msg: '',
+    done: false,
   }
 
   componentDidMount() {
     axios.get(`http://localhost:8000/api/post`)
       .then(res => {
         const posts = res.data;
-        this.setState({ posts });
+        this.setState({ posts, done: 'true' });
       })
       .catch(error => {
-        this.setState({ server_not_connected_msg: "Can't fetch data at this moment" });
+        this.setState({ server_not_connected_msg: "Can't fetch data at this moment", done: 'true' });
         console.log(error);
         alert("We couldn't reach our servers. You may not be connected to internet. Please try again...");
       })
@@ -110,14 +111,25 @@ class App extends Component {
 
             <div className="column" >
               <p className="paddingt-20 paddingl-20 paddingr-20" style={{ fontSize: '30px', color: 'blue' }}>User details:</p>
-              {/* if connection error */}
+              {/* if error while fetching */}
               <div id="connerr"></div>
-              {/* else: */}
-              {this.state.posts.map(post => {
-                return (
-                  <Post key={post.id} post={post} />
-                );
-              })}
+              {/* ---------- */}
+
+              {/* Conditional rendering for fetching data */}
+              {
+
+                !this.state.done ? <div style={{ fontSize: '20px', padding: '20px', color: 'green' }}>Fetching data...</div>
+
+                  : this.state.posts.map(post => {
+                    return (
+                      <Post key={post.id} post={post} />
+                    );
+                  })
+
+              }
+
+              {/* ----------------- */}
+
             </div>
 
           </div>
