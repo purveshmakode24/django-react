@@ -51,7 +51,7 @@ export default class PostForm extends Component {
             })
             .catch(error => {
                 console.log(error);
-                alert("Sorry we couldn't proceed your request at this time. please try again later");
+                alert("Sorry we couldn't proceed your request at this time. Make sure you fill all the fields and try again..");
             })
     }
 
