@@ -1,27 +1,12 @@
 import React, { Component } from "react";
-
 import axios from 'axios';
 
-// import { render } from "react-dom";
 import Post from './Components/Post';
 import PostForm from './Components/PostForm';
 
 import './static/mainnew.css';
-
-
 import 'bulma/css/bulma.css'
 import APIDetails from "./Components/APIDetails";
-
-
-
-// function App() {
-//   return (
-//      <Post />
-
-//   );
-// }
-
-
 
 
 
