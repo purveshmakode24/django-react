@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import axios from 'axios';
 
 export default class PostForm extends Component {
@@ -23,8 +22,6 @@ export default class PostForm extends Component {
             //    imessage: event.target.value,
             [nam]: val
         });
-
-
     }
 
 
@@ -56,16 +53,11 @@ export default class PostForm extends Component {
     }
 
 
-
     render() {
         return (
-
             <div className="post">
-
                 <p style={{ fontSize: '30px', color: 'blue' }}>Add details:</p>
                 <form onSubmit={this.handleSubmit}>
-
-
                     <div className="field">
                         <label className="label paddingt-20">Name:</label>
                         <div className="control has-icons-left has-icons-right">
@@ -96,15 +88,10 @@ export default class PostForm extends Component {
                             <button className="button is-primary" type="submit">Submit</button>
                         </div>
                     </div>
-
-
                 </form>
-
             </div>
         )
-
     }
-
 }
 
 
