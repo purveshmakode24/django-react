@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 import axios from 'axios';
 
 // import $ from 'jquery';
-
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -24,11 +23,8 @@ export default class UpdateForm extends Component {
         let nam = event.target.name;
         let val = event.target.value;
         this.setState({
-
             [nam]: val,
-
         });
-
     }
 
 
@@ -62,14 +58,12 @@ export default class UpdateForm extends Component {
     }
 
 
-
     render() {
 
         function openModal(id) {
             var x = document.getElementById(`${id}`);
             x.classList.add("is-active");
             document.getElementById(`${id}`).style.display = "";
-
         }
 
 
@@ -79,9 +73,7 @@ export default class UpdateForm extends Component {
         }
 
 
-
         return (
-
             <div>
                 <div className="edit-button">
                     <button className="button is-info is-light" title="Edit details" onClick={() => openModal(this.props.post.id)} style={{ float: "right", }}>Edit</button>
@@ -131,7 +123,6 @@ export default class UpdateForm extends Component {
                         </form>
                     </div>
                 </div>
-
             </div>
         )
     }
