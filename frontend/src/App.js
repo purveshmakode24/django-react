@@ -9,7 +9,6 @@ import 'bulma/css/bulma.css'
 import APIDetails from "./Components/APIDetails";
 
 
-
 class App extends Component {
 
   // USING FETCH API ----------------------------------------->
@@ -69,22 +68,17 @@ class App extends Component {
   render() {
 
     // error/connection validation
-
     console.log(this.state.server_not_connected_msg);
 
     // var renderTemp;
     var error = this.state.server_not_connected_msg;
     var errmsg = `<div style="color: red; font-size: 20px; padding:20px">${this.state.server_not_connected_msg}</div>`;
     if (error) {
-      // renderTemp = this.state.server_not_connected_msg;
       document.getElementById('connerr').innerHTML = errmsg;
     }
 
 
-
-
     return (
-
       <ul>
         <div>
           <div className="columns">
@@ -99,22 +93,16 @@ class App extends Component {
               {/* if error while fetching */}
               <div id="connerr"></div>
  
-
               {/* Conditional rendering for fetching data */}
               {
-
                 !this.state.done ? <div style={{ fontSize: '20px', padding: '20px', color: 'green' }}>Fetching data...</div>
-
                   : this.state.posts.map(post => {
                     return (
                       <Post key={post.id} post={post} />
                     );
                   })
-
               }
-
             </div>
-
           </div>
         </div>
       </ul>
